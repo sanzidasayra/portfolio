@@ -3,6 +3,8 @@ import About from './About';
 import Skills from './Skills';
 import Banner from '../Banner';
 import Projects from './Projects';
+import Education from './Education';
+import ContactForm from './ContactForm';
 
 const Home = () => {
   return (
@@ -12,8 +14,10 @@ const Home = () => {
       <Banner />
         <About />
         <Projects />
-      </div>
         <Skills />
+        <Education />
+        <ContactForm />
+      </div>
     </div>
   );
 };

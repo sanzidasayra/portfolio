@@ -57,7 +57,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="py-14 w-11/12 sm:w-10/12 md:w-10/12 lg:w-8/12 mx-auto">
+    <section id="skills" className="py-14">
       <div className="text-center mb-14 relative">
         <div className="relative inline-block">
           <h1 className="text-5xl font-bold text-fuchsia-500 mb-6">

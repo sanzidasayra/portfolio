@@ -5,7 +5,7 @@ import img from '../../assets/img.jpg';
 
 const About = () => {
   return (
-    <section className="px-6 py-16 flex flex-col md:flex-row items-center gap-10 md:gap-20 border rounded-3xl shadow-2xl bg-zinc-900/40 backdrop-blur-lg">
+    <section id="about" className="px-6 py-16 flex flex-col md:flex-row items-center gap-10 md:gap-20 border rounded-3xl shadow-2xl bg-zinc-900/40 backdrop-blur-lg">
       
       {/* Left: Photo */}
       <motion.div

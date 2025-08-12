@@ -4,7 +4,7 @@ import Home from "../components/pages/Home";
 import About from "../components/pages/About";
 import Projects from "../components/pages/Projects";
 import Skills from "../components/pages/Skills";
-import Contact from "../components/pages/Contact";
+import Contact from "../components/pages/ContactForm";
 import Intro from "../components/Intro";
 import ProjectDetails from "../components/pages/ProjectDetails";
 
