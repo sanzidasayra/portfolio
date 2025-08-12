@@ -21,14 +21,18 @@ const Projects = () => {
     <section className="py-14 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent mb-4">
-            Featured Projects
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
-            Showcasing innovative solutions and cutting-edge web applications built with modern technologies.
-          </p>
-        </div>
+        <div className="text-center mb-14 relative">
+  <div className="relative inline-block">
+    <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-fuchsia-600 mb-4">
+      Featured Projects
+    </h2>
+    {/* Underline */}
+    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-40 md:w-60 h-[6px] bg-gradient-to-r from-fuchsia-500 to-[#2e026d] rounded-full"></div>
+  </div>
+  <p className="mt-4 text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
+    Showcasing innovative solutions and cutting-edge web applications built with modern technologies.
+  </p>
+</div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -52,12 +56,6 @@ const Projects = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  {/* Icon Badge */}
-                  <div
-                    className={`absolute top-4 left-4 p-3 rounded-xl bg-gradient-to-r ${gradient} shadow-lg`}
-                  >
-                    <Icon className="h-5 w-5 text-white" />
-                  </div>
                 </div>
 
                 {/* Card Content */}
