@@ -21,8 +21,10 @@ const Layout = () => {
     return (
         <div>
             <Navbar />
-            <Outlet />
-            <Footer />
+            <div className='max-w-8/12 mx-auto'>
+              <Outlet />
+            </div>
+            {/* <Footer /> */}
         </div>
     );
 };
