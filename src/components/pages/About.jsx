@@ -5,7 +5,7 @@ import img from '../../assets/img.jpg';
 
 const About = () => {
   return (
-    <section className=" px-6 py-16 flex flex-col md:flex-row  items-center gap-40 border rounded-3xl shadow-2xl ">
+    <section className="px-6 py-16 flex flex-col md:flex-row items-center gap-10 md:gap-20 border rounded-3xl shadow-2xl bg-zinc-900/40 backdrop-blur-lg">
       
       {/* Left: Photo */}
       <motion.div
@@ -30,10 +30,13 @@ const About = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-fuchsia-500 mb-6 relative inline-block">
-          About Me
-          <span className="absolute -bottom-1 left-0 lg:w-sm w-45 md:w-60 h-[6px] bg-gradient-to-r from-fuchsia-500 to-[#2e026d] rounded-full" />
-        </h2>
+        {/* Heading with underline */}
+        <div className="relative inline-block mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-fuchsia-500">
+            About Me
+          </h2>
+          <div className="absolute -bottom-2 left-0 w-40 md:w-60 h-[6px] bg-gradient-to-r from-fuchsia-500 to-[#2e026d] rounded-full"></div>
+        </div>
 
         <p className="text-xl text-gray-400 font-semibold mb-6">Frontend Developer</p>
 

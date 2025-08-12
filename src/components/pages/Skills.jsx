@@ -1,4 +1,3 @@
-import { title } from "motion/react-client";
 import React, { useState, useEffect } from "react";
 import {
   FaReact,
