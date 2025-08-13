@@ -19,7 +19,7 @@ const Layout = () => {
   }
 
     return (
-        <div>
+        <div className="overflow-hidden"> 
             <Navbar />
               <Outlet />
             <Footer />
