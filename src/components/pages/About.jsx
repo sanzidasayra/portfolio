@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import img from '../../assets/img.jpg';
 
 const About = () => {
+  const controlsLeft = useAnimation();
+  const controlsRight = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controlsLeft.start({ opacity: 1, x: 0 });
+      controlsRight.start({ opacity: 1, x: 0 });
+    } else {
+      controlsLeft.start({ opacity: 0, x: -50 });  
+      controlsRight.start({ opacity: 0, x: 50 }); 
+    }
+  }, [controlsLeft, controlsRight, inView]);
+
   return (
-    <section id="about" className="px-6 py-16 flex flex-col md:flex-row items-center gap-10 md:gap-20 border rounded-3xl shadow-2xl bg-zinc-900/40 backdrop-blur-lg">
-      
-      {/* Left: Photo */}
+    <section
+      id="about"
+      ref={ref}
+      className="px-6 py-7 md:py-14 flex flex-col md:flex-row items-center gap-10 md:gap-20 border rounded-3xl shadow-2xl bg-zinc-900/40 backdrop-blur-lg"
+    >
       <motion.div
         className="flex-shrink-0"
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        animate={controlsLeft}
         transition={{ duration: 1 }}
       >
         <div className="border-4 bg-zinc-800 border-fuchsia-900 transition-transform transform hover:scale-105 rounded-3xl">
@@ -23,14 +43,12 @@ const About = () => {
         </div>
       </motion.div>
 
-      {/* Right: Info */}
       <motion.div
         className="text-center md:text-left flex-1"
         initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
+        animate={controlsRight}
         transition={{ duration: 1 }}
       >
-        {/* Heading with underline */}
         <div className="relative inline-block mb-6">
           <h2 className="text-4xl md:text-5xl font-bold text-fuchsia-500">
             About Me
@@ -41,19 +59,19 @@ const About = () => {
         <p className="text-xl text-gray-400 font-semibold mb-6">Frontend Developer</p>
 
         <p className="text-gray-300 leading-relaxed text-base md:text-lg mb-4">
-          I’m currently pursuing a web development course at Programming Hero, where I’m learning to turn creative ideas into functional, beautiful web applications.
+          I have successfully completed an intensive web development course at Programming Hero, where I gained hands-on experience building modern web applications.
         </p>
 
         <p className="text-gray-300 leading-relaxed text-base md:text-lg mb-4">
-          I love working with React and Tailwind CSS to build clean, scalable, and user-friendly projects.
+          I specialize in creating responsive and scalable user interfaces using React and Tailwind CSS, with a focus on clean code and optimal user experience.
         </p>
 
         <p className="text-gray-300 leading-relaxed text-base md:text-lg mb-4">
-          Outside of coding, I enjoy brainstorming startup ideas, exploring GitHub, and jokingly defending “works on my machine” with coffee and snacks.
-        </p>
+  Curiosity-driven and detail-oriented, I’m always exploring tools like Next.js and Framer Motion to build immersive digital experiences.  
+</p>
 
         <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-          My goal is to become a full-stack developer who creates solutions that are efficient, engaging, and just a bit fun.
+          My goal is to grow as a full-stack developer, delivering efficient, maintainable, and impactful software solutions.
         </p>
       </motion.div>
     </section>

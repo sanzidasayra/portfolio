@@ -11,9 +11,12 @@ import {
 } from "react-icons/fa";
 import { PiFigmaLogoBold } from "react-icons/pi";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiDaisyui, SiFirebase, SiExpress, SiVercel, SiVite} from "react-icons/si";
+import { SiDaisyui, SiFirebase, SiExpress, SiVercel, SiVite } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { VscVscodeInsiders } from "react-icons/vsc";
+
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const skillCategories = [
   {
@@ -45,22 +48,35 @@ const skillCategories = [
       { name: "Git", icon: <FaGitAlt size={32} color="#F05032" /> },
       { name: "GitHub", icon: <FaGithub size={32} color="#181717" /> },
       { name: "Figma", icon: <PiFigmaLogoBold size={32} color="#F24E1E" /> },
-{ name: "VS Code", icon: <VscVscodeInsiders size={32} color="#007ACC" /> },
-{ name: "Vercel", icon: <SiVercel size={32} color="#000000" /> },
-{ name: "Vite", icon: <SiVite size={32} color="#646CFF" /> },
-
-      
-      
+      { name: "VS Code", icon: <VscVscodeInsiders size={32} color="#007ACC" /> },
+      { name: "Vercel", icon: <SiVercel size={32} color="#000000" /> },
+      { name: "Vite", icon: <SiVite size={32} color="#646CFF" /> },
     ],
   },
 ];
 
+const cardVariants = {
+  offscreen: {
+    y: 50,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.2,
+      duration: 0.8,
+    },
+  },
+};
+
 const Skills = () => {
   return (
-    <section id="skills" className="py-14">
+    <section id="skills" className=" ">
       <div className="text-center mb-14 relative">
         <div className="relative inline-block">
-          <h1 className="text-5xl font-bold text-fuchsia-500 mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fuchsia-500 mb-2">
             Skills &amp; Technologies
           </h1>
           <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-40 md:w-60 h-[6px] bg-gradient-to-r from-fuchsia-500 to-[#2e026d] rounded-full"></div>
@@ -70,11 +86,15 @@ const Skills = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skillCategories.map((category) => (
-          <div
+          <motion.div
             key={category.title}
             className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg backdrop-blur-xl hover:scale-[1.02] transition-transform"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={cardVariants}
           >
             <h2
               className={`text-xl font-bold text-white mb-6 bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}
@@ -93,7 +113,7 @@ const Skills = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <section id='home' className=" px-6 py-30 md:py-40 lg:py-40 text-center">
+    <section id='home' className="  py-30 md:py-40 lg:py-40 text-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
