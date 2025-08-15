@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { projects } from "../../data/projects";
 import { ArrowUpRight } from "lucide-react";
 import ProjectDetailsModal from "../ProjectDetailsModal";
+import { FaGithub } from "react-icons/fa";
 
 const gradientMap = {
   StoryMint: "",
@@ -50,7 +51,9 @@ const Projects = () => {
         {/* Project Cards with fade-in on scroll */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => {
-            const gradient = gradientMap[project.name] || "from-fuchsia-500 to-purple-500";
+       const gradient = gradientMap[project.name] || 
+  "bg-gradient-to-r from-fuchsia-500 to-purple-500 bg-clip-text border-fuchsia-500 border-b-2 border-border-b-fuchsia-400 text-transparent";
+
 
             return (
               <motion.div
@@ -77,7 +80,7 @@ const Projects = () => {
                     <h3 className="text-xl font-bold text-white">{project.name}</h3>
                     {project.tag && (
                       <span
-                        className={`px-1 md:px-3 py-1 text-white text-xs rounded-full font-medium bg-gradient-to-r ${gradient}`}
+                        className={`px-1 md:px-3 py-1 text-gray-50  text-xs rounded-full font-semibold shadow-md bg-gradient-to-r ${gradient}`}
                       >
                         {project.tag}
                       </span>
@@ -101,22 +104,36 @@ const Projects = () => {
                     </div>
                   )}
 
-                  <div className="flex justify-between items-center mt-auto">
+                  <div className="flex justify-between gap-4 items-center mt-auto ">
                     <button
                       onClick={() => setSelectedProject(project)}
                       className="bg-fuchsia-900 border border-fuchsia-800 hover:border-fuchsia-600 text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors duration-300"
                     >
                       View details
                     </button>
-
+         
+<div className="flex items-center gap-2">
                     <a
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-fuchsia-900 border border-fuchsia-800 hover:border-fuchsia-600 text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors duration-300 flex items-center gap-1"
                     >
-                      Live Site <ArrowUpRight className="w-4 h-4" />
+                       <ArrowUpRight className="w-4 h-4" />
                     </a>
+
+                                  {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-fuchsia-900 border border-fuchsia-800 hover:border-fuchsia-600 transition text-white text-sm sm:text-base"
+            >
+              <FaGithub />
+            </a>
+          )}
+          </div>
+                    
                   </div>
                 </div>
               </motion.div>
