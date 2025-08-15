@@ -25,7 +25,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-14 md:py-25 dark:bg-gray-900">
+    <section id="projects" className="py-14 md:py-25">
       <div className="container mx-auto">
         {/* Heading with animation */}
         <motion.div

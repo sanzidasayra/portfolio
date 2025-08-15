@@ -14,7 +14,7 @@ const cardVariants = {
 
 const ContactInfo = () => {
   return (
-    <section id="contact" className=" py-7 md:py-14 dark:bg-gray-900 text-white">
+    <section id="contact" className=" py-7 md:py-14 text-white">
       {/* Heading */}
       <h2 className="text-4xl font-extrabold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-purple-700">
         Contact Info
