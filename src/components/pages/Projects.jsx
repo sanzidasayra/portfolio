@@ -6,9 +6,9 @@ import { ArrowUpRight } from "lucide-react";
 import ProjectDetailsModal from "../ProjectDetailsModal";
 
 const gradientMap = {
-  StoryMint: "from-blue-500 to-purple-500",
-  BazarBD: "from-purple-500 to-pink-500",
-  GreenGuardian: "from-emerald-500 to-teal-500",
+  StoryMint: "",
+  BazarBD: "",
+  GreenGuardian: "",
 };
 
 const Projects = () => {
