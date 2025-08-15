@@ -26,7 +26,7 @@ const About = () => {
     <section
       id="about"
       ref={ref}
-      className="px-6 py-7 md:py-14 flex flex-col md:flex-row items-center gap-10 md:gap-20 border rounded-3xl shadow-2xl bg-zinc-900/40 backdrop-blur-lg"
+      className="px-6 py-7 md:py-14 flex flex-col md:flex-row items-center gap-10 md:gap-20 rounded-3xl shadow-2xl bg-zinc-900/40 backdrop-blur-lg"
     >
       <motion.div
         className="flex-shrink-0"
